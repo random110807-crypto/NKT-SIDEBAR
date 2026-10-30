@@ -8,7 +8,7 @@ window.NKT_CONFIG = {
     fullName: "Nashediyon Ki Toli",
     tagline: ["Play", "Learn", "Compete", "Vibe"],
     // The part after chess.com/club/ in your club URL  <-- CHANGE IF DIFFERENT
-    slug: "nashediyon-ki-toli",
+    slug: "nashediyon-ki-toli-nkt",
   },
 
   // Rotating quote slideshow
