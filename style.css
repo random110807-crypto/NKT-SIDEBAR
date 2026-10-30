@@ -1,0 +1,121 @@
+/* NKT Sidebar — dark navy + gold chess theme. Everything is scoped under #nkt */
+#nkt, #nkt * { box-sizing: border-box; }
+#nkt {
+  --gold: #e8c26a; --gold-2: #b8872b; --ink: #0a1020; --ink-2: #111a33;
+  --line: rgba(232,194,106,.28); --txt: #e9edf8; --mute: #93a0c0;
+  width: 300px; max-width: 100%; margin: 0 auto; padding: 14px;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  color: var(--txt); background:
+    radial-gradient(120% 60% at 50% 0%, #1a2748 0%, transparent 60%),
+    linear-gradient(180deg, #0b1226, #060a16);
+  border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.55), inset 0 0 30px rgba(232,194,106,.05);
+}
+#nkt a { color: inherit; text-decoration: none; }
+
+/* header */
+#nkt .nkt-head { text-align: center; padding: 8px 0 12px; }
+#nkt .nkt-crest {
+  width: 86px; height: 86px; margin: 0 auto 6px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 46px; color: var(--gold);
+  background: radial-gradient(circle, #1d2b52, #0a1020);
+  border: 2px solid var(--gold-2);
+  box-shadow: 0 0 22px rgba(232,194,106,.35);
+  animation: nkt-glow 3.5s ease-in-out infinite;
+}
+@keyframes nkt-glow { 50% { box-shadow: 0 0 34px rgba(232,194,106,.65); } }
+#nkt .nkt-name { font-size: 30px; font-weight: 800; letter-spacing: 3px; color: var(--gold); margin: 0; }
+#nkt .nkt-full { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--txt); }
+#nkt .nkt-tag  { margin-top: 6px; font-size: 10px; letter-spacing: 2px; color: var(--mute); text-transform: uppercase; }
+#nkt .nkt-tag i { color: var(--gold); font-style: normal; margin: 0 4px; }
+
+/* live stat chips */
+#nkt .nkt-stats { display: flex; gap: 6px; margin: 10px 0; }
+#nkt .nkt-chip {
+  flex: 1; text-align: center; padding: 7px 4px; border-radius: 10px;
+  background: var(--ink-2); border: 1px solid var(--line);
+}
+#nkt .nkt-chip b { display: block; font-size: 15px; color: var(--gold); }
+#nkt .nkt-chip span { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--mute); }
+
+/* CTA */
+#nkt .nkt-join {
+  display: flex; justify-content: center; align-items: center; gap: 8px;
+  padding: 12px; border-radius: 14px; font-weight: 700; color: #1b1203 !important;
+  background: linear-gradient(180deg, #f6dc92, #c9972f);
+  box-shadow: 0 4px 14px rgba(201,151,47,.35); transition: transform .15s, filter .15s;
+}
+#nkt .nkt-join:hover { transform: translateY(-1px); filter: brightness(1.08); }
+
+/* nav links */
+#nkt .nkt-nav { display: grid; gap: 7px; margin: 12px 0; }
+#nkt .nkt-link {
+  display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 12px;
+  background: linear-gradient(180deg, #12204a, #0c1636); border: 1px solid rgba(120,150,255,.25);
+  transition: all .18s;
+}
+#nkt .nkt-link:hover { border-color: var(--gold); transform: translateX(3px); box-shadow: 0 0 14px rgba(232,194,106,.2); }
+#nkt .nkt-link .ic { font-size: 20px; width: 26px; text-align: center; }
+#nkt .nkt-link b { display: block; font-size: 14px; }
+#nkt .nkt-link small { color: var(--mute); font-size: 11px; }
+#nkt .nkt-link .arr { margin-left: auto; color: var(--gold); }
+
+/* generic card */
+#nkt .nkt-card {
+  margin: 10px 0; padding: 12px; border-radius: 14px;
+  background: var(--ink-2); border: 1px solid var(--line);
+}
+#nkt .nkt-card h4 {
+  margin: 0 0 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+  display: flex; justify-content: space-between; align-items: center;
+}
+#nkt .nkt-card h4 em { font-style: normal; color: var(--mute); letter-spacing: 0; text-transform: none; font-size: 10px; }
+
+/* countdown */
+#nkt .nkt-count { display: flex; gap: 6px; margin-top: 8px; }
+#nkt .nkt-count div { flex: 1; text-align: center; background: #0a1020; border-radius: 8px; padding: 6px 0; border: 1px solid rgba(255,255,255,.06); }
+#nkt .nkt-count b { display: block; font-size: 18px; font-variant-numeric: tabular-nums; }
+#nkt .nkt-count span { font-size: 9px; color: var(--mute); text-transform: uppercase; letter-spacing: 1px; }
+#nkt .nkt-evt-title { font-weight: 700; font-size: 14px; }
+
+/* puzzle board */
+#nkt .nkt-board { display: grid; grid-template-columns: repeat(8, 1fr); border-radius: 8px; overflow: hidden; border: 2px solid var(--gold-2); }
+#nkt .nkt-sq { aspect-ratio: 1; display: grid; place-items: center; font-size: 21px; line-height: 1; }
+#nkt .nkt-sq.l { background: #eadcb6; } #nkt .nkt-sq.d { background: #a9774b; }
+#nkt .nkt-sq.w { color: #fff; text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 1px #000; }
+#nkt .nkt-sq.b { color: #111; }
+#nkt .nkt-puz-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; }
+#nkt .nkt-btn {
+  display: inline-block; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 12px;
+  background: linear-gradient(180deg, #f6dc92, #c9972f); color: #1b1203 !important;
+}
+
+/* spotlight */
+#nkt .nkt-spot { display: flex; gap: 10px; align-items: center; }
+#nkt .nkt-spot img { width: 52px; height: 52px; border-radius: 12px; object-fit: cover; border: 2px solid var(--gold-2); background: #0a1020; }
+#nkt .nkt-spot b { font-size: 14px; display: block; }
+#nkt .nkt-spot small { color: var(--mute); }
+#nkt .nkt-reroll { margin-left: auto; background: none; border: 1px solid var(--line); color: var(--gold); border-radius: 8px; cursor: pointer; padding: 5px 8px; font-size: 14px; }
+#nkt .nkt-reroll:hover { background: rgba(232,194,106,.12); }
+
+/* opening of the day */
+#nkt .nkt-open b { font-size: 15px; }
+#nkt .nkt-open code { display: block; margin: 6px 0; padding: 6px 8px; border-radius: 8px; background: #0a1020; color: var(--gold); font-size: 12px; }
+
+/* quote slideshow */
+#nkt .nkt-quote {
+  position: relative; margin-top: 12px; padding: 18px 16px 24px; min-height: 130px; text-align: center;
+  border-radius: 14px; border: 1px solid var(--line); overflow: hidden;
+  background: radial-gradient(circle at 80% 100%, rgba(232,194,106,.12), transparent 55%), #0b142b;
+}
+#nkt .nkt-quote .slide { position: absolute; inset: 18px 16px 24px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(8px); transition: opacity .7s, transform .7s; }
+#nkt .nkt-quote .slide.on { opacity: 1; transform: none; }
+#nkt .nkt-quote q { font-family: Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.4; quotes: "“" "”"; }
+#nkt .nkt-quote cite { margin-top: 8px; color: var(--gold); font-size: 12px; font-style: normal; letter-spacing: 1px; }
+#nkt .nkt-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; gap: 5px; justify-content: center; }
+#nkt .nkt-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); cursor: pointer; }
+#nkt .nkt-dots i.on { background: var(--gold); width: 16px; border-radius: 4px; }
+#nkt .nkt-bar { position: absolute; top: 0; left: 0; height: 2px; background: var(--gold); width: 0; }
+
+#nkt .nkt-foot { text-align: center; margin-top: 10px; font-size: 10px; color: var(--mute); letter-spacing: 1px; }
+#nkt .nkt-skel { color: var(--mute); font-size: 12px; }
